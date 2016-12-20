@@ -12,8 +12,8 @@ angular.module('NarrowItDownApp', [])
   function NarrowItDownController(MenuSearchService) {
     var controller = this;
     var querystat = -1;
+    var found = [];
     controller.SearchString = "<Enter your search criteria>";
-    controller.found = [];
     controller.remItem = function(index) {
       console.log ("Remove item in Controller");
       console.log ("invoked with index="+index);
@@ -31,7 +31,7 @@ angular.module('NarrowItDownApp', [])
        controller.querystat = -1;
       var promise = MenuSearchService.getMatchedMenuItems(controller.SearchString);
        promise.then(
-          function (foundItems) {
+            function (foundItems) {
             console.log ("In promise...then of main controller");
             controller.found = foundItems;
             if (controller.found.length > 0) {
@@ -39,7 +39,7 @@ angular.module('NarrowItDownApp', [])
             } else {
               controller.querystat = 0;
             }
-            console.log ("Filling controller with (" +  foundItems.length + ") items");
+            console.log ("Filling controller with (" +  controller.found.length + ") items");
           }
        )
     }
@@ -85,7 +85,7 @@ function foundItemsDirectiveController() {
 // Define the directive
 function  foundItems () {
   var ddo = {
-    templateUrl: 'foundItems.html',
+    templateUrl: 'founditems.html',
     scope: {
       found: '<',
       onremove: '&',
