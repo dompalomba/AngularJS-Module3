@@ -19,8 +19,8 @@
       <div class="form-group narrow-button">
         <button class="btn btn-primary" ng-click = 'nwctrl.Search()'>Narrow It Down For Me!</button>
     <div ng-show="nwctrl.querystat > 0" class="container" >
-      <p>QueryStat: {{nwctrl.querystat}}</p>
-      <p>Found.length: {{nwctrl.found.length}}</p>
+      <!-- <p>QueryStat: {{nwctrl.querystat}}</p>
+      <p>Found.length: {{nwctrl.found.length}}</p> -->
       <found-items
         found="nwctrl.found"
         onremove="nwctrl.remItem(arg_idx)"
@@ -29,13 +29,13 @@
     </div>
     <div ng-show="nwctrl.querystat == -1" >
       <p>No Search criteria provided</p>
-      <p>test Querystat: {{nwctrl.querystat}}</p>
-      <p>test Found.length: {{nwctrl.found.length}}</p>
+      <!-- <p>test Querystat: {{nwctrl.querystat}}</p>
+      <p>test Found.length: {{nwctrl.found.length}}</p> -->
     </div>
     <div ng-show="nwctrl.querystat == 0" >
       <p>No match found for provided Search criteria </p>
-      <p>test Querystat: {{nwctrl.querystat}}</p>
-      <p>test Found.length: {{nwctrl.found.length}}</p>
+      <!-- <p>test Querystat: {{nwctrl.querystat}}</p>
+      <p>test Found.length: {{nwctrl.found.length}}</p> -->
     </div>
   </div>
 
